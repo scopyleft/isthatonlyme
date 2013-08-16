@@ -2,12 +2,12 @@ extends layout
 
 
 block content
-    h1 Is that just me #{title}
+    h1.question Is that only me #{title}
 
-    p
+    p.answer
         if answer == 1
-            | That's no just you!
+            | That's not only you!
         else
-            | Yes, that's really just you!
+            | Yes, that's really only you!
 
-    a(href="/suggest") Suggest your own
+    a.suggest(href="/suggest") Suggest your own

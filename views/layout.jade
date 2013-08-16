@@ -1,10 +1,15 @@
 doctype 5
 html(lang="en")
     head
-        title= pageTitle
-        script(type='text/javascript').
-            if (foo) {
-                bar(1 + 5)
-            }
+        title Is that only me… #{title}
+        link(rel="stylesheet", href="/static/css/main.css")
     body
-        block content
+        section#content
+            block content
+
+        footer
+            ul
+                li
+                    a(href="https://github.com/scopyleft/isitonlyme") sources on Github
+                li
+                    a(href="https://twitter.com/isthatonlyme") follow us on Twitter

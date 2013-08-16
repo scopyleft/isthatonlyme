@@ -20,7 +20,6 @@ app.post('/suggest', function(req, res) {
             answer: req.body.answer == "yes" ? 1 : 0
         };
     questions.insert(question, function(question, err) {
-        console.log('question', question)
         params = {};
         if(err) {
             params['errors'] = err;

@@ -34,6 +34,7 @@ exports.findBySlug = function(slug, callback) {
 
 exports.insert = function(question, callback) {
     question.slug = utils.slugify(question.title);
+    question.creation_date = new Date();
     db.collection('questions', function(err, collection) {
         collection.insert(question, {safe: true}, function(err) {
             callback(question, err);
