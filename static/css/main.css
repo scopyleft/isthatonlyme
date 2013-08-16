@@ -1,0 +1,76 @@
+/* layout */
+
+body {
+    margin: 0;
+    font-family: Palatino,Georgia,serif;
+    width: 80%;
+    margin: 10% auto 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    margin-top: 5%;
+    padding-top: 3%;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+footer li {
+    display: inline-block;
+    margin-right: 3%;
+}
+
+
+/* home */
+
+a.suggest {
+    color: inherit;
+    font-weight: bold;
+    text-align: right;
+    display: block;
+}
+a.suggest:after {
+    content: " >";
+}
+
+p.answer {
+    font-size: 1.5em;
+}
+
+
+/* suggest form */
+
+form .question {
+    margin-bottom: 2%;
+    font-size: 1.5em;
+}
+form .question label {
+    display: inline;
+}
+form .question input {
+    display: inline;
+    border: none;
+    padding: 0 5px;
+    width: 75%;
+    font: inherit;
+    font-style: italic;
+    color: inherit;
+    border-bottom: 1px dotted #ccc;
+}
+
+form .answer label {
+    margin-left: 1%;
+}
+
+form input[type="submit"] {
+    margin-top: 2%;
+    font: inherit;
+}
+
+
