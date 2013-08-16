@@ -2,7 +2,8 @@ var mongo = require('mongodb')
   , Server = mongo.Server
   , config = require('./config')
   , server = new Server(config.db.server, config.db.port, {auto_reconnect : true})
-  , db = new mongo.Db(config.db.database, server);
+  , db = new mongo.Db(config.db.database, server)
+  , utils = require('./utils');
 
 
 db.open(function(err, client) {
@@ -31,8 +32,11 @@ exports.findBySlug = function(slug, callback) {
     });
 }
 
-exports.insert = function(data, callback) {
+exports.insert = function(question, callback) {
+    question.slug = utils.slugify(question.title);
     db.collection('questions', function(err, collection) {
-        collection.insert(data, {safe: true}, callback);
+        collection.insert(question, {safe: true}, function(err) {
+            callback(question, err);
+        });
     });
 }

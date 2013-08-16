@@ -3,3 +3,11 @@ extends layout
 
 block content
     h1 Is that just me #{title}
+
+    p
+        if answer == 1
+            | That's no just you!
+        else
+            | Yes, that's really just you!
+
+    a(href="/suggest") Suggest your own

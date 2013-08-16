@@ -10,6 +10,26 @@ app.configure(function() {
     app.use(express.static(__dirname, '/static'));
 });
 
+app.get('/suggest', function(req, res) {
+    return res.render("suggest")
+});
+
+app.post('/suggest', function(req, res) {
+    var question = {
+            title: req.body.question,
+            answer: req.body.answer == "yes" ? 1 : 0
+        };
+    questions.insert(question, function(question, err) {
+        console.log('question', question)
+        params = {};
+        if(err) {
+            params['errors'] = err;
+            return res.render("suggest", params);
+        }
+        return res.redirect(302, "/"+question.slug);
+    })
+});
+
 app.get('/:slug', function(req, res) {
     questions.findBySlug(req.params.slug, function(question) {
         return res.render("index", question);

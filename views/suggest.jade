@@ -1,0 +1,17 @@
+extends layout
+
+
+block content
+    h1 Suggest a sentence
+
+    if errors
+        = errors
+
+    form(method="post", action="")
+        label(for="question") Is that just me
+        input(type="text", id="question", name="question", placeholder="who wrote this?")
+        input(type="radio", id="answer_no", name="answer", value="no")
+        label(for="answer_no") It's just you!
+        input(type="radio", id="answer_yes", name="answer", value="yes")
+        label(for="answer_yes") It's everyone!
+        input(type="submit", value="submit")
