@@ -3,7 +3,8 @@ var mongo = require('mongodb')
   , config = require('./config')
   , server = new Server(config.db.server, config.db.port, {auto_reconnect : true})
   , db = new mongo.Db(config.db.database, server)
-  , utils = require('./utils');
+  , utils = require('./utils')
+  , date = new Date();
 
 
 db.open(function(err, client) {
@@ -33,8 +34,11 @@ exports.findBySlug = function(slug, callback) {
 }
 
 exports.insert = function(question, callback) {
+    function pad(n){return n<10 ? '0'+n : n}
     question.slug = utils.slugify(question.title);
-    question.creation_date = new Date();
+    question.creation_date = date.getFullYear()+"-"+pad(date.getMonth())+"-"
+                            +pad(date.getDate())+" "+pad(date.getHours())+":"
+                            +pad(date.getMinutes())+":"+pad(date.getSeconds())
     db.collection('questions', function(err, collection) {
         collection.insert(question, {safe: true}, function(err) {
             callback(question, err);
