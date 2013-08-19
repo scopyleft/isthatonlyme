@@ -1,11 +1,13 @@
 var express = require('express')
   , app = express()
+  , port = process.env.PORT || 3000
   , questions = require('./questions');
 
 
 app.configure(function() {
     app.set('views', __dirname + '/views');
     app.set('view engine', 'jade');
+    app.use(express.logger());
     app.use(express.bodyParser());
     app.use(express.static(__dirname, '/static'));
 });
@@ -41,4 +43,6 @@ app.get('/', function(req, res) {
     })
 });
 
-app.listen(3000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
