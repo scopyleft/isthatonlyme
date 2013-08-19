@@ -1,10 +1,33 @@
 /* layout */
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
-    font-family: Palatino,Georgia,serif;
+    font-family: Palatino,Georgia,serif
+}
+
+header {
     width: 80%;
-    margin: 10% auto 0;
+    height: 3%;
+    margin: auto;
+    padding-top: 2%;
+}
+
+header .home {
+    background: transparent url("../images/home.png") no-repeat;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -100%;
+}
+
+#content {
+    width: 80%;
+    height: 86%;
+    margin: 4% auto 0;
 }
 
 h1 {
@@ -12,13 +35,20 @@ h1 {
 }
 
 footer {
+    position: fixed;
     border-top: 1px solid #ccc;
     margin-top: 5%;
-    padding-top: 3%;
+    padding: 2%;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    background: #fff;
 }
 
 footer ul {
-    margin: 0;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
     padding: 0;
 }
 footer li {
