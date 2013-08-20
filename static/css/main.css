@@ -26,8 +26,12 @@ header .home {
 
 #content {
     width: 80%;
-    height: 86%;
+    height: 75%;
     margin: 4% auto 0;
+}
+
+aside.content {
+    margin-top: 7%;
 }
 
 h1 {
