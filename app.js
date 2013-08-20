@@ -39,7 +39,7 @@ app.get('/:slug', function(req, res) {
 
 app.get('/', function(req, res) {
     questions.findAll(function(questions) {
-        return res.render("index", questions[0]);
+        return res.render("index", {question: questions[0]});
     })
 });
 
