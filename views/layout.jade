@@ -5,7 +5,8 @@ html(lang="en")
         link(rel="stylesheet", href="/static/css/main.css")
     body
         header
-            a.home(href="/") Home
+            block header_link
+                a.home(href="/") Home
         section#content
             block content
 

@@ -1,0 +1,16 @@
+extends layout
+
+
+block content
+    h1.question Is that only me #{question.title}
+
+    p.answer
+        if question.answer == 1
+            | No, that's about everyone!
+        else
+            | Yes, that's really only you!
+
+    small
+        a.permalink(href="/#{question.slug}") http://isthatonly.me/#{question.slug}
+
+    a.suggest(href="/") Suggest your own

@@ -1,13 +1,15 @@
 extends layout
 
+block header_link
 
 block content
-    h1 Suggest a sentence
 
     if errors
-        p= errors
+        ul
+            each error in errors
+                li= errors
 
-    form(method="post", action="")
+    form(method="post", action="/suggest")
         div(class="question")
             label(for="question") Is that only me
             input(type="text", id="question", name="question", placeholder="who can write here?")

@@ -12,10 +12,6 @@ app.configure(function() {
     app.use(express.static(__dirname, '/static'));
 });
 
-app.get('/suggest', function(req, res) {
-    return res.render("suggest")
-});
-
 app.post('/suggest', function(req, res) {
     var question = {
             title: req.body.question,
@@ -33,14 +29,12 @@ app.post('/suggest', function(req, res) {
 
 app.get('/:slug', function(req, res) {
     questions.findBySlug(req.params.slug, function(question) {
-        return res.render("index", question);
+        return res.render("view", {question: question});
     })
 });
 
 app.get('/', function(req, res) {
-    questions.findAll(function(questions) {
-        return res.render("index", {question: questions[0]});
-    })
+    return res.render("suggest");
 });
 
 app.listen(port, function() {
