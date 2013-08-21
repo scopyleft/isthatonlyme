@@ -4,15 +4,16 @@ block header_link
 
 block content
 
-    if errors
+    if form.errors
+        h3 Please fix the errors below
         ul
-            each error in errors
-                li= errors
+            each error in form.errors
+                li= error
 
     form(method="post", action="/suggest")
         div(class="question")
             label(for="question") Is that only me
-            input(type="text", id="question", name="question", placeholder="who can write here?")
+            input(type="text", id="question", name="question", value="#{form.data.question}", placeholder="who can write here?")
         div(class="answer")
             input(type="radio", id="answer_no", name="answer", value="no")
             label(for="answer_no") It's only you!
