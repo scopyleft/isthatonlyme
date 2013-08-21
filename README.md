@@ -1,11 +1,15 @@
 # Is that only me?
 
-This app is a simple web service to ticke one another.
+This simple web service is there to tickle one another, publish your moody WTF,
+or whatever dumb idea your imagination leads you to.
+
+It is published at http://isthatonly.me.
+
+## How it works
 
 Fill in your "Is that only me…" sentence, says wether it's about only you
-or everyone and submit. It will be published automatically.
-
-Every publishing creates a tweet on https://twitter.com/isthatlonlyme.
+or everyone and submit. It will be published automatically and tweeted on
+https://twitter.com/isthatlonlyme.
 
 
 ## Techno
@@ -24,4 +28,4 @@ npm install
 node app
 ```
 
-and open a browser at `http://localhost:3000`
+Open a browser at `http://localhost:3000`.
